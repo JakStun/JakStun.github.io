@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffa726;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+
+  body.fade-out {
+    opacity: 0;
+  }
+  
+  .site-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+
+    background: var(--gradient);
+    animation: gradientShift 8s ease infinite;
+
+    filter: contrast(1.1) brightness(0.9);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.1);
+
+    width: 100%;
+    overflow: visible;
+    z-index: 2;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .org-name {
+    font-size: 4.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Geneva';
+
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+
+    background: var(--gradient);
+    background-size: 600% 600%;
+    animation: gradientShift 8s ease infinite;
+
+    padding: 4px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .login-btn {
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(270deg, #ffa726, #ff7043, #ff8f00, #ffa726);
+    background-size: 600% 600%;
+    animation: gradientShift 8s ease infinite;
+    color: #333;
+    border: none;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  :root {
+    --gradient: linear-gradient(270deg, #ffa726, #ff7043, #ff8f00, #ffa726);
+  }
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .pillar-left, .pillar-right {
+    position: absolute;
+    top: 0%; /* MUST be defined otherwise bad placement for some reason*/
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .pillar-left {
+    left: 0;
+   }
+
+  .pillar-right {
+    right: 0;
+    }
+
+
+  .section {
+    height: 100vh; /* Each section will take up the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    
+  }
+
+  .current-projects {
+    height: 100vh;
+    background: url('../imgs/Rome_scenery.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    z-index: 1;
+  }
+
+  .current-projects-title {
+    position: relative;
+  }
+
+  #sneakpeak-project {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  #sneakpeak-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .current-projects h1 {
+    margin: 25px 80px;
+    font-size: 3rem;
+    display: inline-block;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); /* <-- THIS is the blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .project-description {
+    font-size: 1.75em;
+    margin-left: 50px;
+  }
+
+  .upcoming-updates {
+    font-size: 1.05em;
+    margin-left: 50px;
+  }
+
+  div.project-name {
+    display: flex;
+    align-items: center;
+    margin: 15px 15px;
+    font-size: 1.75em;
+    font-family: 'Geneva';
+    gap: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    z-index: 3;
+  }
+
+  .project-overview {
+    position: relative;
+    z-index: 2;
+    border-style: solid;
+    width: 50%;
+    margin-right: 15px;
+    color: #333;
+    
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    height: 60%;
+    overflow: visible;
+    /* box-shadow: 0 8px 32px 0 white;
+    cursor: pointer;       /* Change cursor to pointer to indicate clickability */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect on hover */
+  }
+
+  .project-overview:hover {
+    transform: scale(1.025);
+    color: black;
+
+    overflow: visible;
+  }
+
+  
+  div.all-projects {
+    height: 100vh;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+  }
+
+/* ABOUT US SECTION */
+
+  .about-us {
+    position: relative; /* Add this to contain the pillars */
+    background: url('../imgs/Rome_scenery2.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: rgb(194, 56, 32); /* or your chosen background color */
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    z-index: 1;
+    color: white;
+  }
+
+  .about-us h1 {
+    margin: 25px 80px;
+    font-size: 3rem;
+    display: inline-block;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); /* <-- THIS is the blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+
+  .about-pillar-left, .about-pillar-right {
+    position: absolute;
+    top: 0%; /* Adjust for the desired placement */
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+}
+
+  .about-pillar-left {
+    left: 0;
+  }
+
+  .about-pillar-right {
+    right: 0;
+  }
+
+  .about-us-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+  .person-info {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      width: 400px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+  }
+
+  .person-info:hover {
+      transform: scale(1.05);
+  }
+
+  .person-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid white;
+  }
+
+  .person-details h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #fff;
+  }
+
+  .person-details p {
+      font-size: 1.1rem;
+      color: #f0f0f0;
+  }
+
+/* CONTACT US SECTION */
+
+  .contact-pillar-left, .contact-pillar-right {
+    position: absolute;
+    top: 0%; /* Adjust for the desired placement */
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .contact-pillar-left {
+    left: 0;
+  }
+
+  .contact-pillar-right {
+    right: 0;
+  }
+
+  .contact-us {
+    height: 100vh;
+    background: url('../imgs/Rome_scenery3.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    z-index: 1;
+
+    background-color: grey; /* or your chosen background color */
+    color: white;
+  }
+
+  .contact-us h1 {
+    margin: 0 100px;
+    font-size: 3rem;
+    display: inline-block;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); /* <-- THIS is the blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .contact-info {
+    margin: 50px 100px;
+    display: inline-block;
+    font-size: 1.5em;
+  }
+
+  .navigation-dots {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 30px;
+    height:100px;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    backdrop-filter: blur(10px); /* <-- THIS is the blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+  }
+
+  .navigation-dots .dot {
+      position: relative;
+      width: 17px;
+      height: 17px;
+      background-color: white;
+      border-radius: 50%;
+      display: block;
+      transition: background-color 0.3s;
+      opacity: 0.8;
+  }
+
+  .navigation-dots .dot:hover {
+      background-color: black;
+      opacity: 1;
+  }
+
+  .navigation-dots .tooltip {
+    position: absolute;
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-size: 0.85rem;
+  }
+
+  /* Show tooltip on hover */
+  .navigation-dots .dot:hover .tooltip {
+      opacity: 1;
+  }

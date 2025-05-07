@@ -1,0 +1,501 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffd671;
+}
+
+/* Header Styling */
+.site-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: black;
+    filter: contrast(1.1) brightness(0.9);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.org-name {
+    font-size: 3rem;
+    color: #ffda75;
+    font-weight: bold;
+    font-family: 'Geneva';
+    margin-right: 32px;
+    animation: colorShift 5s ease-in-out infinite;
+}
+
+/* Keyframes for color shift */
+@keyframes colorShift {
+    0% { color: #ffda75; }
+    50% { color: #b37532; }
+    100% { color: #ffda75; }
+}
+
+@keyframes colorShiftDownload {
+    0% { color:  #b37532; }
+    50% { color: #3b1e12; }
+    100% { color: #b37532; }
+}
+
+@keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.nav-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #ffda75;
+    color: black;
+    box-shadow: 0 0 15px 4px rgba(255, 223, 0, 0.8);
+}
+
+/* Full-height for sections */
+.full-height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section Styling */
+.section {
+    position: relative;
+    background-color: #ffd671;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    scroll-margin-top: 70px;
+}
+
+.slogan {
+    font-size: 2.5rem; /* or any size you need */
+    font-weight: bold;
+    background: linear-gradient(270deg, #b37532, #3b1e12, black, #b37532);
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+
+.main-info {
+    color: #3b1e12;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* What's New Section */
+.whats-new-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-weight: bold;
+}
+
+.whats-new-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.whats-new-image,
+.logs-image {
+    flex: 1;
+    min-width: 200px;
+    width: 100%;
+    max-width: none; /* REMOVE this if present */
+    display: flex;
+    justify-content: center; /* Optional: center image */
+    margin-right: 0; /* remove or adjust for smaller screens */
+}
+
+.whats-new-image img,
+.logs-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#whats-new h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.whats-new-list, .under-consrtuction-list {
+    list-style: none;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.whats-new-list li, .under-consrtuction-list li {
+    margin-bottom: 10px;
+}
+
+.download-now {
+    color: #ffda75;
+    font-weight: bolder;
+    font-size: 2.75rem;
+    animation: colorShiftDownload 5s ease-in-out infinite;
+}
+
+.logs-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.logs-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.logs-list {
+    list-style: none;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    color: black;
+
+    max-height: 75vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#logs h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-top: 20px;
+}
+
+
+/* Content Padding */
+p {
+    font-size: 1.75rem;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+ul {
+    font-size: 1.25rem;
+    padding-left: 20px;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffda75;
+    font-weight: bolder;
+    animation: colorShiftDownload 5s ease-in-out infinite;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 16px;
+    }
+
+    .org-name {
+        font-size: 2rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Navigation Dots */
+.navigation-dots {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 30px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    opacity: 0;
+}
+
+.navigation-dots .dot {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    background-color: black;
+    border-radius: 50%;
+    display: block;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navigation-dots .dot:hover {
+    background-color: #b37532;
+    box-shadow: 0 0 15px 4px rgba(179, 117, 50, 0.8);
+    opacity: 1;
+}
+
+.navigation-dots .tooltip {
+    position: absolute;
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-size: 0.85rem;
+}
+
+/* Show tooltip on hover */
+.navigation-dots .dot:hover .tooltip {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 16px 20px;
+    }
+
+    .logo-container {
+        margin-right: 0;
+    }
+
+    .org-name {
+        font-size: 2rem;
+    }
+
+    .nav-buttons {
+        gap: 8px;
+    }
+
+    .nav-btn {
+        padding: 8px 16px;
+    }
+}
+
+.contact-header {
+    font-size: 2.5rem;
+    color: #3b1e12;
+    font-weight: bold;
+}
+
+.contact-footer {
+    padding: 20px 40px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-left img {
+    vertical-align: middle;
+}
+
+.footer-center {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    text-align: right;
+    font-size: 13px;
+    color: #333;
+}
+
+.google-play-badge {
+    height: auto;
+}
+
+.secret {
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.secret:hover {
+    color: black;
+    font-weight: normal;
+    cursor: text;
+}
+
+@media (max-width: 768px) {
+    .whats-new-image img,
+    .logs-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .whats-new-content,
+    .logs-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact > div {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px;
+        position: static !important;
+    }
+
+    #contact > div > div {
+        position: static !important;
+        transform: none !important;
+        justify-content: flex-start;
+    }
+
+    #contact img {
+        margin-bottom: 10px;
+    }
+
+    .contact-header {
+        text-align: center;
+        width: 100%;
+    }
+
+    #contact a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .full-height {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-info,
+    .download-now,
+    .whats-new-list,
+    .under-consrtuction-list,
+    .logs-list,
+    p {
+        font-size: 1.2rem;
+    }
+
+    .slogan {
+        font-size: 1.8rem;
+    }
+}
