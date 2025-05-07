@@ -1,1 +1,173 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sneak Peak</title>
+        <link rel="icon" href="imgs/ic_launcher_round.png" type="image/svg+xml">
+        <link rel="stylesheet" href="css/sneakpeak_styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="logo-container">
+                <img src="imgs/SneakPeak_icon.png" alt="Logo" class="logo">
+                <span class="org-name">Sneak Peak</span>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="scrollToSection('whats-new')">What's New</button>
+                <button class="nav-btn" onclick="scrollToSection('logs')">Logs</button>
+                <!-- <button class="nav-btn" onclick="scrollToSection('download')">Download</button> -->
+                <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
+            </div>
+        </header>
+
+        <!-- Sections -->
+        <section id="whats-new" class="section full-height">
+            <div class="whats-new-content">
+                <div class="whats-new-text">
+                    <h2 class="slogan"><strong>BOOST YOUR SNEAKER GAME</strong></h2>
+                    <p class="main-info">Welcome to <strong>Sneak Peak</strong>, your ultimate sneaker companion! <br> Discover the latest sneaker releases, track your favorites, and stay ahead of the game.</p>
+                    <p class="download-now"><strong>Download now:</strong> <a href="https://play.google.com/store/apps/details?id=org.flexionix.sneakpeak" target="_blank">Sneak Peak Play Store</a></p>
+                    <h2 class="whats-new-header">What's New:</h2>
+                    <p>Version 5.6 (01.05.2025) includes:</p>
+                    <ul class="whats-new-list">
+                        <li>New feature: DC Shoes tracking</li>
+                        <li>Bug fixes and performance improvements (loading brands)</li>
+                        <li>Other minor bug fixes</li>
+                    </ul>
+        
+                    <h2 class="whats-new-header">Currently working on:</h2>
+                    <ul class="under-consrtuction-list">
+                        <li>FastAPI integration into backend</li>
+                        <li>Push notifications</li>
+                        <li>iOS release</li>
+                        <li>Marketplace</li>
+                    </ul>
+                </div>
+                <div class="whats-new-image">
+                    <img src="imgs/Whats_new_img.png" alt="What's New Preview">
+                </div>
+            </div>
+        </section>
+
+        <section id="logs" class="section full-height">
+            <div class="logs-content">
+                <div class="logs-text">
+                    <h2>Logs:</h2>
+                    <p>28.4.2025 - Creation of web page</p>
+                    <ul class="logs-list">
+                        <li>03.05.2025 - Fixed favourites and settings data saving</li>
+                        <li>01.05.2025 - DC Shoes integration to app (version 5.6)</li>
+                        <li>17.04.2025 - Load fixed</li>
+                        <li>15.04.2025 - Minor bug fixes</li>
+                        <li><strong>09.04.2025 - Released on Google Play</strong></li>
+                        <li>23.03.2025 - Final touches before release</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>Lost in time</li>
+                        <li>...</li>
+                        <li>23.10.2024 - Start</li>
+                    </ul>
+                </div>
+                <div class="logs-image">
+                    <img src="imgs/foto_3.png" alt="App photo">
+                </div>
+                <div class="logs-image">
+                    <img src="imgs/foto_4.png" alt="App photo">
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section" style="padding: 40px 20px;">
+            <h2 class="contact-header" style="margin-bottom: 20px;">Contact:</h2>
+        
+            <div style="position: relative; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        
+            <!-- Left: Logo and Email -->
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="imgs/SneakPeak_icon.png" alt="SneakPeak Logo" style="height: 60px;">
+                <p style="margin: 0;">Email: <a href="mailto:sneak.app.peak@gmail.com">sneak.app.peak@gmail.com</a></p>
+            </div>
+        
+            <!-- Center: Social Icons (Absolutely centered) -->
+            <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 20px;">
+                <a href="https://instagram.com/sneakpeak_app" target="_blank">
+                <img src="imgs/instagram_logo.png" alt="Instagram" width="30" height="30" style="display: block;">
+                </a>
+                <a href="https://youtube.com/@sneakpeak_app" target="_blank">
+                <img src="imgs/youtube_logo.png" alt="YouTube" width="40" height="40" style="display: block;">
+                </a>
+                <a href="https://tiktok.com/@sneakpeak_app" target="_blank">
+                <img src="imgs/tiktok_logo.png" alt="TikTok" width="30" height="30" style="display: block;">
+                </a>
+            </div>
+        
+            <!-- Right: Rights Reserved -->
+            <div style="text-align: right;">
+                <p style="margin: 0; font-size: 1.5rem;">&copy; 2025 Sneak Peak Al<a href="secret.html" class="secret">l</a> rights reserved</p>
+            </div>
+        
+            </div>
+        </section>
+          
+          
+        <!-- Navigation Dots -->
+        <div class="navigation-dots">
+            <div class="dot" onclick="scrollToSection('whats-new')">
+                <div class="tooltip">What's New</div>
+            </div>
+            <div class="dot" onclick="scrollToSection('logs')">
+                <div class="tooltip">Logs</div>
+            </div>
+            <!-- <div class="dot" onclick="scrollToSection('download')">
+                <div class="tooltip">Download</div>
+            </div> -->
+            <div class="dot" onclick="scrollToSection('contact')">
+                <div class="tooltip">Contact</div>
+            </div>
+        </div>
+
+        <script>
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                window.scrollTo({
+                    top: section.offsetTop, // 50px offset for header visibility
+                    behavior: 'smooth'
+                });
+            }
+        
+            // Show/hide navigation dots based on header visibility
+            window.onscroll = function () {
+                const headerHeight = document.querySelector('.site-header').offsetHeight;
+                const dots = document.querySelector('.navigation-dots');
+                
+                // Initially hide the dots
+                if (window.scrollY > headerHeight) {
+                    dots.style.display = 'flex'; // Show the dots when scrolling past header
+                    dots.style.opacity = '1'; // Ensure dots are visible
+                } else {
+                    dots.style.display = 'none'; // Hide the dots when at the top
+                }
+            };
+        </script>
+        
+
+    </body>
