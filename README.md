@@ -1,2 +1,2 @@
 # JakStun.github.io
-Sneak Peak web page
+Official Sneak Peak web page

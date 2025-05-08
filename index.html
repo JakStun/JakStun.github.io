@@ -17,12 +17,10 @@
             <div class="nav-buttons">
                 <button class="nav-btn" onclick="scrollToSection('whats-new')">What's New</button>
                 <button class="nav-btn" onclick="scrollToSection('logs')">Logs</button>
-                <!-- <button class="nav-btn" onclick="scrollToSection('download')">Download</button> -->
                 <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
             </div>
         </header>
 
-        <!-- Sections -->
         <section id="whats-new" class="section full-height">
             <div class="whats-new-content">
                 <div class="whats-new-text">
@@ -47,6 +45,10 @@
                 </div>
                 <div class="whats-new-image">
                     <img src="imgs/Whats_new_img.png" alt="What's New Preview">
+                </div>
+
+                <div class="section-emblem">
+                    <img src="imgs/Emblem.png" alt="Emblem" class="emblem">
                 </div>
             </div>
         </section>
@@ -93,6 +95,10 @@
                 <div class="logs-image">
                     <img src="imgs/foto_4.png" alt="App photo">
                 </div>
+
+                <div class="section-emblem">
+                    <img src="imgs/Emblem.png" alt="Emblem" class="emblem">
+                </div>
             </div>
         </section>
         
@@ -101,13 +107,11 @@
         
             <div style="position: relative; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
         
-            <!-- Left: Logo and Email -->
             <div style="display: flex; align-items: center; gap: 15px;">
                 <img src="imgs/SneakPeak_icon.png" alt="SneakPeak Logo" style="height: 60px;">
                 <p style="margin: 0;">Email: <a href="mailto:sneak.app.peak@gmail.com">sneak.app.peak@gmail.com</a></p>
             </div>
         
-            <!-- Center: Social Icons (Absolutely centered) -->
             <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 20px;">
                 <a href="https://instagram.com/sneakpeak_app" target="_blank">
                 <img src="imgs/instagram_logo.png" alt="Instagram" width="30" height="30" style="display: block;">
@@ -120,7 +124,6 @@
                 </a>
             </div>
         
-            <!-- Right: Rights Reserved -->
             <div style="text-align: right;">
                 <p style="margin: 0; font-size: 1.5rem;">&copy; 2025 Sneak Peak Al<a href="secret.html" class="secret">l</a> rights reserved</p>
             </div>
@@ -129,7 +132,6 @@
         </section>
           
           
-        <!-- Navigation Dots -->
         <div class="navigation-dots">
             <div class="dot" onclick="scrollToSection('whats-new')">
                 <div class="tooltip">What's New</div>
@@ -137,9 +139,6 @@
             <div class="dot" onclick="scrollToSection('logs')">
                 <div class="tooltip">Logs</div>
             </div>
-            <!-- <div class="dot" onclick="scrollToSection('download')">
-                <div class="tooltip">Download</div>
-            </div> -->
             <div class="dot" onclick="scrollToSection('contact')">
                 <div class="tooltip">Contact</div>
             </div>
@@ -149,22 +148,20 @@
             function scrollToSection(sectionId) {
                 const section = document.getElementById(sectionId);
                 window.scrollTo({
-                    top: section.offsetTop, // 50px offset for header visibility
+                    top: section.offsetTop,
                     behavior: 'smooth'
                 });
             }
         
-            // Show/hide navigation dots based on header visibility
             window.onscroll = function () {
                 const headerHeight = document.querySelector('.site-header').offsetHeight;
                 const dots = document.querySelector('.navigation-dots');
                 
-                // Initially hide the dots
                 if (window.scrollY > headerHeight) {
-                    dots.style.display = 'flex'; // Show the dots when scrolling past header
-                    dots.style.opacity = '1'; // Ensure dots are visible
+                    dots.style.display = 'flex';
+                    dots.style.opacity = '1';
                 } else {
-                    dots.style.display = 'none'; // Hide the dots when at the top
+                    dots.style.display = 'none';
                 }
             };
         </script>
