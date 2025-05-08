@@ -208,6 +208,12 @@ body {
     animation: colorShiftDownload 5s ease-in-out infinite;
 }
 
+.fastapi-integration:hover {
+    color: black;
+    font-weight: bold;
+    animation: colorShiftDownload 5s ease-in-out infinite;
+}
+
 .logs-content {
     display: flex;
     justify-content: space-between;
