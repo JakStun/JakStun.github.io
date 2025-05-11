@@ -288,6 +288,33 @@ a:hover {
     animation: colorShiftDownload 5s ease-in-out infinite;
 }
 
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;  /* Ensure no wrapping of buttons */
+    width: 100%;
+  }
+  
+  /* Media query for small screens (max-width 768px) */
+  @media (max-width: 768px) {
+    .social-buttons {
+      display: absolute;  /* Change to absolute positioning */
+      justify-content: center;  /* Ensure buttons stay centered */
+      flex-wrap: nowrap;         /* Prevent buttons from wrapping */
+      gap: 15px;                 /* Adjust the gap if needed */
+      width: 100%;               /* Ensure it takes full width */
+    }
+  
+    /* Optional: if you want to adjust image sizes for smaller screens */
+    .social-button {
+      width: 25px;    /* Adjust the button size on mobile */
+      height: 25px;
+    }
+  }
+  
+
 /* Mobile Responsive Styling */
 @media (max-width: 768px) {
     .site-header {
@@ -370,25 +397,37 @@ a:hover {
 
 @media (max-width: 768px) {
     .site-header {
-        padding: 16px 20px;
+      flex-direction: column;
+      align-items: flex-start;
     }
-
+  
     .logo-container {
-        margin-right: 0;
+      width: 100%;
+      justify-content: flex-start;
+      margin-bottom: 10px;
     }
-
-    .org-name {
-        font-size: 2rem;
-    }
-
+  
     .nav-buttons {
-        gap: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .nav-btn {
+      flex: 1;
+      min-width: 80px;
+      text-align: center;
     }
 
-    .nav-btn {
-        padding: 8px 16px;
-    }
-}
+    /* .social-buttons {
+      justify-content: center;
+      width: 100%;
+    } */
+  }
+  
 
 .contact-header {
     font-size: 2.5rem;
@@ -448,22 +487,7 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .whats-new-image img,
-    .logs-image img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .whats-new-content,
-    .logs-content {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
+    /* Ensure flex layout for contact section */
     #contact > div {
         flex-direction: column;
         align-items: flex-start !important;
@@ -471,36 +495,38 @@ a:hover {
         position: static !important;
     }
 
-    #contact > div > div {
-        position: static !important;
-        transform: none !important;
-        justify-content: flex-start;
+    /* Prevent social buttons from stacking vertically */
+    .social-buttons {
+        flex-direction: row !important; /* Ensure they stay in one row */
+        justify-content: center !important;
     }
 
-    #contact img {
-        margin-bottom: 10px;
-    }
-
-    .contact-header {
-        text-align: center;
-        width: 100%;
-    }
-
+    /* Adjust button sizes on mobile */
     #contact a img {
-        width: 25px;
-        height: 25px;
+        margin-top: 10px;
+        width: 30px;  /* Set appropriate width for mobile */
+        height: 30px; /* Matching height for button */
     }
-}
 
-@media (max-width: 768px) {
+    /* Other mobile styles */
+    .whats-new-image img,
+    .logs-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .whats-new-content,
+    .logs-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .full-height {
         height: auto;
         padding-top: 40px;
         padding-bottom: 40px;
     }
-}
 
-@media (max-width: 768px) {
     .main-info,
     .download-now,
     .whats-new-list,
@@ -512,5 +538,10 @@ a:hover {
 
     .slogan {
         font-size: 1.8rem;
+    }
+
+    .contact-header {
+        text-align: center;
+        width: 100%;
     }
 }
