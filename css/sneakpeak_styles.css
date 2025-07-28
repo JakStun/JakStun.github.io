@@ -267,6 +267,7 @@ body {
 .concept-image {
   width: 100%;
   height: auto;
+  max-width: 800px;
   border-radius: 12px;
   transform: scale(1.1);
   /* box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15); */
